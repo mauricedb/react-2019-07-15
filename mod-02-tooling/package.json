@@ -1,0 +1,32 @@
+{
+  "name": "mod-02-tooling",
+  "version": "0.0.1",
+  "description": "A NPM tooling demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve .",
+    "webpack": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mauricedb/react-2019-07-15.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Maurice",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mauricedb/react-2019-07-15/issues"
+  },
+  "homepage": "https://github.com/mauricedb/react-2019-07-15#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-loader": "^8.0.6",
+    "serve": "^11.1.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
+  }
+}

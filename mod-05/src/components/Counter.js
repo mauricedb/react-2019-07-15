@@ -1,12 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 
-function Counter() {
-  const count = 0;
+import { createIncrementAction } from "../store/actions";
+
+function Counter(props) {
+  const count = props.count;
   return (
     <div>
       <span>Value {count} </span>
       <button
         onClick={() => {
+          props.increment();
           console.log("Inrement the count");
         }}
       >
@@ -16,4 +20,23 @@ function Counter() {
   );
 }
 
-export default Counter;
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    increment: function() {
+      dispatch(createIncrementAction());
+    }
+  };
+}
+
+const connected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
+const wrappedCounter = connected(Counter);
+export default wrappedCounter;

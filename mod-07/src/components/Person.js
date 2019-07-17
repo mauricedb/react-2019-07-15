@@ -2,7 +2,34 @@ import React, { Component } from "react";
 
 import Clock from "./Clock";
 
-class Person extends Component {
+function LabeledInput({ label, value, onChange, name }) {
+  return (
+    <div>
+      <label>{label} </label>
+      <input name={name} value={value} onChange={onChange} />
+    </div>
+  );
+}
+
+function PersonPresentation({ firstName, lastName, onChange }) {
+  return (
+    <div>
+      <LabeledInput
+        label="Firstname:"
+        value={firstName}
+        onChange={onChange}
+        name="firstName"
+      />
+      <div>
+        <label>Lastname: </label>
+        <input name="lastName" value={lastName} onChange={onChange} />
+      </div>
+      <Clock interval={1000} />
+    </div>
+  );
+}
+
+class PersonContainer extends Component {
   state = {
     firstName: "Maurice",
     lastName: "de Beijer"
@@ -16,19 +43,13 @@ class Person extends Component {
     const { firstName, lastName } = this.state;
 
     return (
-      <div>
-        <div>
-          <label>Firstname: </label>
-          <input name="firstName" value={firstName} onChange={this.onChange} />
-        </div>
-        <div>
-          <label>Lastname: </label>
-          <input name="lastName" value={lastName} onChange={this.onChange} />
-        </div>
-        <Clock interval={1000} />
-      </div>
+      <PersonPresentation
+        firstName={firstName}
+        lastName={lastName}
+        onChange={this.onChange}
+      />
     );
   }
 }
 
-export default Person;
+export default PersonContainer;

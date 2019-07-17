@@ -1,4 +1,4 @@
-import React from "react";
+import React, { StrictMode } from "react";
 
 import Counter from "./components/Counter";
 import Person from "./components/Person";
@@ -8,9 +8,11 @@ function App() {
   return (
     <div>
       <h1>Better React Components</h1>
-      <Counter />
-      <Person />
-      <Clock interval={1000} />
+      <StrictMode>
+        <Counter />
+        <Person />
+        <Clock interval={1000} message={{}} person={{ firstName: "" }} />
+      </StrictMode>
     </div>
   );
 }

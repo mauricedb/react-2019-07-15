@@ -12,3 +12,4 @@
 - [ReactiveX](http://reactivex.io/)
 - [RxJS Marbles](https://rxmarbles.com/)
 - [PropType validation](https://www.npmjs.com/package/prop-types)
+- [jest-fetch-mock](https://www.npmjs.com/package/jest-fetch-mock)
